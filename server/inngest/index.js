@@ -21,8 +21,6 @@ const syncUserCreation = inngest.createFunction(
     };
     // Here you would typically save the user data to your database
     await User.create(userData);
-
-    return { success: true };
   }
 );
 
@@ -38,8 +36,6 @@ const syncUserDeletion = inngest.createFunction(
     const { id } = event.data;
     // Here you would typically delete the user data from your database
     await User.findByIdAndDelete(id);
-
-    return { success: true };
   }
 );
 
@@ -63,8 +59,6 @@ const syncUserUpdate = inngest.createFunction(
 
     // Here you would typically update the user data in your database
     await User.findByIdAndUpdate(id, userData);
-
-    return { success: true };
   }
 );
 // create an empty array where we'll export future inngest functions
